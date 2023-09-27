@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial Page Design</title>
+    <link
+      rel="stylesheet"
+      href="./styles.css" />
+    <script
+      src="https://kit.fontawesome.com/4e631e6167.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="testimonial">
+        <div class="testimonial-text">
+          <div class="user-text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              “Product A is truly revolutionary! It’s exceeded all my
+              expectations and has become a staple in my daily routine.
+            </p>
+            <span>A,CEO HUMBLE</span>
+          </div>
+          <div class="user-text active-text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              “I’ve been using Product A for a week now, and I’m impressed with
+              its quality and performance. Highly recommended!”
+            </p>
+            <span>B,CEO HUMBLE</span>
+          </div>
+          <div class="user-text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              Product A is a game-changer. It’s user-friendly and delivers on
+              its promises. I can’t imagine life without it now.”
+            </p>
+            <span>C,CEO HUMBLE</span>
+          </div>
+          <div class="user-text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              “I’m in love with Product A! It’s efficient, reliable, and worth
+              every penny.”
+            </p>
+            <span>D,CEO HUMBLE</span>
+          </div>
+          <div class="user-text">
+            <i class="fas fa-quote-left"></i>
+            <p>
+              “Product A has transformed my life for the better. It’s a
+              fantastic product that everyone should try.”
+            </p>
+            <span>E,CEO HUMBLE</span>
+          </div>
+        </div>
+        <div class="testimonal-pic">
+          <img
+            src="./images/user1.png"
+            class="user-pic"
+            alt=""
+            onclick="showReview()" />
+          <img
+            src="./images/user2.png"
+            class="user-pic active-pic"
+            alt=""
+            onclick="showReview()" />
+          <img
+            src="./images/user3.png"
+            class="user-pic"
+            alt=""
+            onclick="showReview()" />
+          <img
+            src="./images/user4.png"
+            class="user-pic"
+            alt=""
+            onclick="showReview()" />
+          <img
+            src="./images/user5.png"
+            class="user-pic"
+            alt=""
+            onclick="showReview()" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let userTexts = document.getElementsByClassName("user-text");
+      let userPics = document.getElementsByClassName("user-pic");
+
+      function showReview() {
+        for (userPic of userPics) {
+          userPic.classList.remove("active-pic");
+        }
+        for (userText of userTexts) {
+          userText.classList.remove("active-text");
+        }
+        let i = Array.from(userPics).indexOf(event.target);
+
+        userPics[i].classList.add("active-pic")
+        userTexts[i].classList.add("active-text")
+      }
+    </script>
+  </body>
+</html>
